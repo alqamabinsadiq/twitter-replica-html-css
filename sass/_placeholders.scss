@@ -1,0 +1,30 @@
+//Placeholders
+%flexColumnFlow{
+     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+%flexRowFlow{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+}
+
+%cursorPointer{
+        cursor: pointer;
+        text-decoration: underline;
+}
+
+%contentHeading{
+    position: relative;
+    color: lightgrey;
+    font-size: 12px;
+    top: 129px;
+    left: -149px;
+}
+%contentHeading_count{
+    color: white;
+    position: relative;
+    top:148px;
+}

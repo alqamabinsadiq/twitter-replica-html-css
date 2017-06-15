@@ -1,0 +1,13 @@
+@import './mainBody';
+@import './header';
+body{
+    font-family: sans-serif;
+    background: transparent;
+    margin: 0px;
+}
+div{
+    display: block;
+}
+.mainBody {
+    max-height: 80%;
+}

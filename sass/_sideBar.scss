@@ -1,0 +1,157 @@
+//Variables
+$blueTextColor: #70b9ff;
+
+.sideBar_header{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    min-height: 50px;
+    width: 100%;
+    span{
+        &:hover{
+            @extend %cursorPointer;
+        }
+    }
+    .sideBar_header_headingLeft {
+       color:lighten(grey, 10%);
+       margin: 30px 50px 30px 50px;
+       min-width: 100px;
+    }
+    .sideBar_header_headingRight{
+        font-size: 13px;
+        color: $blueTextColor;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+         width: 100%;
+        span{
+            margin: 30px 20px 30px 5px
+        }
+    }
+}
+.sidebar_recommendations{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    .recommendation{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0px 5px 0px 5px; 
+        font-size: 12px;
+        color: grey;
+        .fa-user-plus{
+                color: lighten(grey, 20%);
+                margin-left: 10px;
+                margin-top: 17px;
+                margin-right: 15px;
+                font-size: 14px;
+                &:hover{
+                    cursor: pointer;
+                }
+        }
+        .recommendation_details{
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .recommendation_name{
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            + .fa-check-circle {
+                color: $blueTextColor;
+                margin: 0px 4px 0px 4px; 
+            }
+        }
+        .recommendation_username:hover{
+            @extend %cursorPointer;
+        }
+    }
+    .avatar{
+        @include user_avatar(40px,40px,25px);
+        cursor: pointer;
+    }
+}
+
+
+.sidebar_popular{
+    @extend %flexRowFlow;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 14px;
+    color: $blueTextColor;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    div{
+        span:hover{
+            @extend %cursorPointer;
+        }
+    }
+}
+.sideBar_trends{
+    width: 80%;
+    @extend %flexColumnFlow;
+    font-size: 12px;
+    color: $blueTextColor;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding-left: 50px;
+    .sideBar_trends_trend{
+        &:hover{
+            @extend %cursorPointer;
+        }
+    }
+    div{
+        margin-top: 5px;
+        
+    }
+}
+.sideBar_trends_header{
+    width: 100%;
+    @extend %flexRowFlow;
+    margin: 20px 0 15px 0; 
+    div{
+        font-size: 12px;
+        color: $blueTextColor;
+        margin-right: 20px;
+        &:hover{
+            @extend %cursorPointer;
+        }
+    }
+    .sideBar_trends_headingGrey{
+        color: darken(lightgrey, 10%);
+        font-size: 14px;
+    }
+}
+.sideBar_photoContainer{
+    @extend %flexColumnFlow;
+    width: 100%;
+    border-top: 1px solid #eee;
+    justify-content: center;
+    .sideBar_photoContainer_heading{
+        width: 100%;
+        @extend %flexRowFlow;
+        color: darken(lightgrey, 20%);
+        font-size: 14px; 
+        justify-content: center;
+        &:hover{
+        @extend %cursorPointer;
+        }
+    }
+    .sideBar_photoContainer_row{
+        width: 100%;
+        @extend %flexRowFlow;
+        justify-content: center;
+        img{
+            margin: 4px;
+            height: 85px;
+            width: 80px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}

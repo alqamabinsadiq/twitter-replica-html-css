@@ -1,0 +1,180 @@
+@import './mixins.scss';
+@import './placeholders';
+@import './sideBar.scss';
+//Variables
+$blueTextColor: #70b9ff;
+
+.mainBody{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #eee;
+    .sideBar{
+        width: 30%;
+        height: 700px;
+        border: 1px solid #eee;
+        box-shadow: 0 0px 1px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        @extend %flexColumnFlow;
+        overflow:hidden;  //code added to prevent scroll
+    }
+    .contentBar{
+        width: 80%;
+        border: 1px solid #eee;
+        box-shadow: 0 0px 1px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        margin: 18px 18px 0px 18px;
+        @extend %flexColumnFlow;
+    }
+    .logoBar{
+            width: 80px;
+    }
+}
+
+.contentBar {
+    .contentBar_header {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        span{
+            color: darken(lightgrey, 10%);
+            margin: 10px 10px 5px 10px; 
+        }
+    }
+}
+.contentBar_tweet{
+    @extend %flexRowFlow;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    .avatar{
+        @include user_avatar(50px,50px,25px);
+        cursor: pointer;
+    }
+}
+.contentBar_content{
+    @extend %flexColumnFlow;
+    margin-left: 25px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: grey;
+    width: 90%;
+    .contentBar_user{
+        color: black;
+        font-size: 12px;
+        font-weight: bold;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    .contentBar_username{
+        &:hover{
+            @extend %cursorPointer;
+        }
+    }      
+}
+
+.contentBar_content_header{
+    @extend %flexRowFlow;
+    width: 100%;
+}
+
+.contentBar_userDetails{
+    min-width: 250px;
+}
+
+.contentBar_tweetDetails{
+    @extend %flexRowFlow;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 10px;
+    span{
+        margin-left: 10px;
+        &:hover{
+        cursor: pointer;
+    }
+    }
+}
+.contentBar_content_tweet{
+    width: 100%;
+    margin-top: 15px;
+    @extend %flexColumnFlow;
+    img{
+        max-width: 500px;
+        margin-top: 5px;
+        max-height: 300px;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+         transition: all 0.3s;
+         cursor: pointer;
+    }
+    .item:hover{
+        transition: all 0.6s;
+        transform: scale(1.1);
+    }
+}
+.hashTag{
+    color: $blueTextColor;
+}
+
+.logoBar{
+    @extend %flexColumnFlow;
+    margin-top: 18px;
+}
+.write_tweet {
+    @extend %flexColumnFlow;
+    justify-content: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    img{
+        margin-left: 10px;
+        height: 30px;
+        width: 30px;
+    }
+    @include user_avatar(50px,50px,25px);
+    background-color: #70b9ff;
+}
+.write_tweet:hover{
+        opacity: 0.5;
+        animation: fade 2s linear;
+        cursor: pointer;
+}
+
+.contentBar{
+    .hashTag:hover{
+        @extend %cursorPointer;
+    }
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    &:hover{
+        + .dropdown-content{
+            display: block;
+        }
+    }}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 145px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: -3px;
+    top: 25px;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 5px 9px;
+    text-decoration: none;
+    display: block;
+    border: 1px solid #eee;
+    font-size: 12px;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: grey}
